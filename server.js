@@ -1,7 +1,7 @@
 // Dependencies
 var http = require("http");
 var fs = require("fs");
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 // Create our server
 var server = http.createServer(handleRequest);
