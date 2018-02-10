@@ -13,6 +13,7 @@ server.listen(PORT, function() {
 
 function handleRequest(req, res) {
 	var path = getPath(req.url)
+	console.log("Serving up " + path)
 	fs.readFile(path, function(err, data) {
 		res.writeHead(((path !== __dirname + "/404.html") ? 200 : 404), { "Content-Type": "text/html" });
 		res.end(data);
